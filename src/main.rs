@@ -39,7 +39,63 @@ fn main() {
     };
     println!("{}", y);
     // Recursion
-    println!("Recurssion {}", fact(3))
+    println!("Recurssion {}", fact(3));
+
+    // Control FLow
+
+    let x = 6;
+    if x < 5 {
+        println!("Smaller");
+
+    } else {
+        println!("Bigger");
+    }
+
+    // Conditional statements
+    let y : char = if x < 5 {'s'} else {'b'};
+    println!("{}", y);
+
+    // loop with results
+    let mut cnt = 0;
+    let  result = loop {
+        cnt += 1;
+        if cnt == 5 {
+            break cnt * 2;
+        }
+    };
+    println!("Result {}", result);
+
+    // Loop Labels
+    cnt = 0;
+    'test_loop: loop {
+        println!("Count : {cnt}");
+       let mut remaining = 10;
+        loop {
+            println!("Remaining: {remaining}");
+            if remaining == 1 {
+                break 'test_loop
+            }
+            remaining -= 1;
+        }
+        cnt += 2;
+    }
+
+    // while
+
+    cnt = 0;
+    while cnt < 10  {
+        println!( "While {cnt}");
+        cnt += 1;
+    }
+
+    // for works like a foreach
+    for element in arr {
+        println!("For {element}");
+    }
+    // For range
+    for number in (1..4).rev() {
+        println!("For Range {number}");
+    }
 }
 
 fn sum_fn(x : i32, y : i32) -> i32{
